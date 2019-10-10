@@ -1,0 +1,579 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Certera Docs</title>
+    <link href="css/screen.css" rel="stylesheet" media="screen" />
+    <link href="css/print.css" rel="stylesheet" media="print" />
+    <script src="scripts/all.js"></script>
+	<style>
+		.screenshot {
+			padding-left: 28px;
+			max-width:46% !important;
+		}
+	</style>
+  </head>
+  <body class="index" data-languages="[&quot;text&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.svg" class="logo" alt="Logo" />
+        <div class="lang-selector">
+          <a href="#" data-language-name="text">notes</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+        <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#home" class="toc-h1 toc-link" data-title="Home">Home</a>
+          </li>
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+		  </li>
+		  <li>			
+		  	<a href="#license" class="toc-h1 toc-link" data-title="License">License</a>
+		  </li>
+		  <li>
+		  	<a href="#privacy" class="toc-h1 toc-link" data-title="Privacy">Privacy</a>
+		  </li>
+		  <li>
+		  	<a href="#source-code" class="toc-h1 toc-link" data-title="Source Code">Source Code</a><ul class="toc-list-h2">
+			  <li>
+				<a href="#feature-requests" class="toc-h2 toc-link" data-title="Feature Requests">Feature Requests</a>
+			  </li>
+			  <li>
+				<a href="#issues" class="toc-h2 toc-link" data-title="Issues">Issues</a>
+			  </li>
+		    </ul>
+		  </li>
+		  <li>
+		  	<a href="#attribution" class="toc-h1 toc-link" data-title="Attribution">Attribution</a>
+		  </li>
+		  <li>
+		  	<a href="#download" class="toc-h1 toc-link" data-title="Download">Download</a>
+		  </li>
+		  <li>
+            <a href="#install" class="toc-h1 toc-link" data-title="Install">Install</a>
+			<ul class="toc-list-h2">
+			  <li>
+				<a href="#windows" class="toc-h2 toc-link" data-title="Windows">Windows</a>
+			  </li>
+			  <li>
+				<a href="#linux" class="toc-h2 toc-link" data-title="Linux">Linux</a>
+			  </li>
+		    </ul>
+          </li>
+          <li>
+            <a href="#setup" class="toc-h1 toc-link" data-title="Setup">Setup</a>
+			<ul class="toc-list-h2">
+			  <li>
+				<a href="#account" class="toc-h2 toc-link" data-title="Account">Account</a>
+			  </li>
+			  <li>
+				<a href="#acme-account" class="toc-h2 toc-link" data-title="ACME Account">ACME Account</a>
+			  </li>
+			  <li>
+				<a href="#server" class="toc-h2 toc-link" data-title="Account">Server</a>
+			  </li>
+			  <li>
+				<a href="#certificate" class="toc-h2 toc-link" data-title="Certificate">Certificate</a>
+			  </li>
+			  <li>
+				<a href="#configuration" class="toc-h2 toc-link" data-title="Configuration">Configuration</a>
+			  </li>
+		    </ul>
+          </li>
+          <li>
+            <a href="#admin-ui" class="toc-h1 toc-link" data-title="Admin UI">Admin UI</a>
+			<ul class="toc-list-h2">
+			  <li>
+				<a href="#security" class="toc-h2 toc-link" data-title="Security">Security</a>
+			  </li>
+			  <li>
+				<a href="#tracking" class="toc-h2 toc-link" data-title="Tracking Page">Tracking Page</a>
+			  </li>
+			  <li>
+				<a href="#acme-accounts" class="toc-h2 toc-link" data-title="ACME Accounts Page">ACME Accounts Page</a>
+			  </li>
+			  <li>
+				<a href="#keys" class="toc-h2 toc-link" data-title="Keys Page">Keys Page</a>
+			  </li>
+			  <li>
+				<a href="#certificates" class="toc-h2 toc-link" data-title="Certificates Page">Certificates Page</a>
+			  </li>
+			  <li>
+				<a href="#notifications" class="toc-h2 toc-link" data-title="Notifications Page">Notifications Page</a>
+			  </li>
+			  <li>
+				<a href="#settings" class="toc-h2 toc-link" data-title="Settings Page">Settings Page</a>
+			  </li>
+		    </ul>
+          </li>
+          <li>
+            <a href="#api" class="toc-h1 toc-link" data-title="API">API</a>
+			<ul class="toc-list-h2">
+			  <li>
+				<a href="#api-security" class="toc-h2 toc-link" data-title="API Security">API Security</a>
+			  </li>
+			  <li>
+				<a href="#certificates-api" class="toc-h2 toc-link" data-title="Certificates API">Certificates API</a>
+			  </li>
+			  <li>
+				<a href="#keys-api" class="toc-h2 toc-link" data-title="Keys API">Keys API</a>
+			  </li>
+		    </ul>
+          </li>
+          <li>
+            <a href="#integration" class="toc-h1 toc-link" data-title="Integration">Integration</a>
+			<ul class="toc-list-h2">
+			  <li>
+				<a href="#http-01" class="toc-h2 toc-link" data-title="HTTP-01">HTTP-01</a>
+			  </li>
+			  <li>
+				<a href="#api-clients" class="toc-h2 toc-link" data-title="API Clients">API Clients</a>
+			  </li>
+			  <li>
+				<a href="#applying-certificates" class="toc-h2 toc-link" data-title="Applying Certificates">Applying Certificates</a>
+			  </li>
+		    </ul>
+          </li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="home">Certera Docs</h1>
+			<p>Welcome to the Certera docs! Scroll down to keep reading or use the menu on the left to select your topic.</p>
+			<p>Please note that Certera isn't production ready yet. This is beta software and Certera is not responsible for any problems you run into using this software.</p>
+		<h1 id="introduction">Introduction</h1>
+			<p>Certera is a <b>Central Validation Server</b> (CSV) for the ACME protocol (specifically for Let's Encrypt certificates). Certera is a
+			self-contained web application you host and operate yourself. With Certera, through Let's Encrypt APIs, you can issue free certificates for all of your needs.
+			If you're unfamiliar with Let's Encrypt, the ACME protocol and its concepts, please take a look here: 
+			<a href="https://letsencrypt.org/how-it-works/">https://letsencrypt.org/how-it-works/</a>.</p>
+			<h3>What exactly is a CSV?</h3>
+			<p>A CSV is a server that centralizes the management of certain Let's Encrypt functions. On the Let's Encrypt integration guide page
+			(<a href="https://letsencrypt.org/docs/integration-guide/">https://letsencrypt.org/docs/integration-guide/</a>), 
+			they define a Central Validation Server as the following:
+			"If you want to use the http-01 challenge anyhow, you may want to take advantage of HTTP redirects. You can set up each of your frontends to 
+			redirect /.well-known/acme-validation/XYZ to validation-server.example.com/XYZ for all XYZ. This delegates responsibility for issuance to validation-server, 
+			so you should protect that server well.
+			... it may make sense, if you have a lot of frontends, to use a smaller subset of servers to manage issuance. This makes it easier to use redirects 
+			for http-01 validation, and provides a place to store certificates and keys durably."
+			<p>Certera does exactly that and more. Here's a list of some of the current features:</p>
+			<ul>
+				<li>Track, analyze and receive notifications for certificate expirations, changes or issuance failures.</li>
+				<li>Separates certificate issuance and the application of the certificates. In other words, Certera gives you greater flexibility by helping acquire the certificates in one step and more easily facilitating how and when the certificates are applied, or used, as another step.</li>
+				<li>Manage certificate keys. Certera can help create and store keys durably. This gives you the flexibility of managing the lifecycle of the keys used by your certificates.</li>
+				<li>Works great for more complex scenarios (for a server farm or machines behind a load balancer). Because issuing certificates and applying them are clearly separate steps, and certificates are centralized in Certera, you can easily apply certificates onto a wide variety of interesting web server scenarios.</li>
+				<li>Helps manage rate limits by acquiring the certificate once and allowing you to work out how to best apply that certificate.</li>
+			</ul>		
+			
+			<h1 id="license">License</h1>
+				<p>Please refer to the full <a href="license.html">license</a> for the exact terms pertaining to your use of Certera. We'll outline the basic points here.</p>
+				<p>There are two licenses available, Community Edition and Commercial Edition.</p>
+				<h3>Community Edition</h3>
+					<p>No limitations of any features or functionality. Basic support is available through the Certera GitHub issues page. Community Edition is free for those that meet any of the criteria:</p>
+					<ul>
+						<li>Registered non-profit organizations (e.g. 501(c)(3) and the equivalent in other countries)</li>
+						<li>Personal or individual use</li>
+						<li>Organizations whose main product is open-source (contact Certera for approval)</li>
+						<li>Startups and organizations with less than $1 million USD in yearly <b>revenue</b></li>
+					</ul>
+				<h3>Commercial Edition</h3>
+					<p>Commercial Edition is for companies that do not meet the criteria above. A paid license is perpetual and gives you free upgrades for 1 year effective the purchase date. A 30 day trial is available. There are two versions of the Commercial Edition available.</p>
+					<h4>Standard</h4>
+						<ul>
+							<li>Limited to management of 50 certificates - $300 USD</li>
+						</ul>
+					<h4>Enterprise</h4>
+						<ul>
+							<li>Unlimited management of certificates - $1000 USD</li>
+						</ul>
+				<h3>Support</h3>
+					<p>Paid licenses come with e-mail support for 1 year (48 hour response time). Priority support is available for $500 USD per year and you get 8 hour response time via email.</p>
+				<h3>Services</h3>
+					<p>Certera can also provision, install and setup an instance for you upon request. Contact us for more details.</p>
+				<h3>Giving Back</h3>				
+					<p>10% of all revenue will be split amongst the contributors of the open source technologies used to build Certera. The ratio is determined by utility and 
+					importance to the Certera project and is subject to change depending on what technologies are used. Percentage of share outlined in the <a href="#attribution">attribution</a> section below. 
+					If project does not accept revenue share, funds will go to a source of their choosing. Projects that are produced by for-profit institutions will not receive a share.</p>
+				<h3>Is Certera open source?</h3>
+				<p>Certera is technically &quot;soure available&quot;. Open source, in the truest sense, means abiding by a license that the Open Source Initiative (OSI) has approved; Certera is not licensed as an approved OSI license, such as MIT or Apache-2.0.
+				</p>
+				<h3>Why is it licensed this way?</h3>
+				<p>Certera has chosen this model for the fundamental reason that it is difficult to monetize open source projects. Certain kinds of projects work well for the existing OSI approved licenses. For example, open source projects that are linked to directly via compiled code can make it so that the consumers their work either open source their work or pay for an exclusion (i.e. are dual-licensed). Projects that are integrated with over, say a network connection, like a database engine, can use a license like AGPL. There exists a problem with a set of projects that are neither linked to directly via compiled code or accessed directly from other systems, like database engines. Certera, falls under a category of "tools" or "infrastructure components", not unlike a Content Management System (CMS) or a photo editing application. These kinds of applications are often licensed under <a href="https://en.wikipedia.org/wiki/Open-core_model">&quot;open core&quot;</a> terms. Meaning, a certain set of functionality is made available as open source, but other functionality is made available via a paid, non-open source license. Otherwise, they often rely on donations. For examples of the described scenarios above, please refer to the following projects:</p>
+				<ul>
+					<li><a href="https://en.wikipedia.org/wiki/Alfresco_(software)">Alfresco CMS</a></li>
+					<li><a href="https://www.gimp.org/">GIMP</a></li>
+					<li><a href="https://www.qt.io/download-open-source">Qt</a></li>
+					<li><a href="https://www.cockroachlabs.com/pricing/">Cockroach DB</a></li>
+					<li>Many other countless examples...</li>
+				</ul>
+				<p>Rather than attempting to split up the code to make it open core, it's simpler to use a non-OSI license, and adopt a "community edition" license that is also commonly found in &quot;soure available&quot; projects.</p>
+				
+									
+				<h3>Terms</h3>					
+					<ul>
+						<li>You can view and modify the source code to fit your needs</li>
+						<li>You can consume the Certera APIs freely without any limitations</li>
+						<li>You can not redistribute or republish the source code</li>
+					</ul>
+					<p>As you can tell, it's not hard to circumvent the above. Certera does not want to introduce license keys and code to limit functionality. If you'd like to walk the wild-side and not comply with the copyright license terms, you risk a lot more than the cost of the license.</p>	
+			<h1 id="privacy">Privacy</h1>
+				<p>Certera's source code is available online and you are welcome, and encouraged, to review the code. There is no analytics, telemetry or phoning home of any kind. Certera is used to secure keys and certificates and needs to be as secure as possible. This is why Certera has decided to make the source code available. Comments, ideas and feedback regarding privacy and security are always welcome.
+				</p>
+			<h1 id="source-code">Source Code</h1>
+				<p>Source code is available here:</p>
+					
+				<h2 id="feature-requests">Feature Requests</h2>
+					<p>Feature requests should be submitted in the GitHub issues page (with a &quot;feature-request&quot; label): <a href="https://github.com">https://github.com</a></p>
+				<h2 id="issues">Issues</h2>
+					<p>Similarly, issues and bugs should also be submitted in the GitHub issues page: <a href="https://github.com">https://github.com</a></p>
+				
+			<h1 id="attribution">Attribution</h1>
+				<p>Certera is built using the following technologies. As mentioned above, 10% of the revenue from the paid licenses will go back to help support and sustain open source projects that aren't already backed by big for-profit institutions. While the ratios may change over time, Certera is committed to always giving at least 10% of its revenue back to open source.</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Project</th>
+							<th>Revenue Share %</th>
+							<th>License</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="https://github.com/aspnet/AspNetCore">ASPNET Core</a></td>
+							<td>0%</td>
+							<td>Apache-2.0</td>
+						</tr>
+						<tr>
+							<td><a href="https://github.com/madskristensen/BundlerMinifier">BuildBundlerMinifier</a></td>
+							<td>0%</td>
+							<td>Apache-2.0</td>							
+						</tr>
+						<tr>
+							<td><a href="https://github.com/fszlin/certes">Certes</a></td>
+							<td>3%</td>
+							<td>MIT</td>							
+						</tr>
+						<tr>
+							<td><a href="https://github.com/MichaCo/DnsClient.NET">DnsClient.NET</a></td>
+							<td>0.5%</td>
+							<td>Apache-2.0</td>
+						</tr>
+						<tr>
+							<td><a href="https://github.com/aspnet/EntityFrameworkCore">Entity Framework Core</a></td>
+							<td>0%</td>
+							<td>Apache-2.0</td>
+						</tr>
+						<tr>
+							<td><a href="https://letsencrypt.org/">Let's Encrypt*</a></td>
+							<td>5%</td>
+							<td>MPL-2.0</td>
+						</tr>
+						<tr>
+							<td><a href="https://github.com/tinohager/Nager.PublicSuffix">Nager.PublicSuffix</a></td>
+							<td>0.5%</td>
+							<td>MIT</td>
+						</tr>
+						<tr>
+							<td><a href="https://github.com/jstedfast/MailKit">MailKit</a></td>
+							<td>0%</td>
+							<td>MIT</td>
+						</tr>
+						<tr>
+							<td><a href="https://www.sqlite.org/copyright.html">SQLite</a></td>
+							<td>0%</td>
+							<td>Public Domain</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>* Though not directly used via compiled code, Let's Encrypt APIs are consumed. They are also the Certificate Authority issuing the certificates.</p>
+				<p>
+				Font: <a href="https://www.fontsquirrel.com/fonts/sansation">Sansation</a> (SIL Open Font License v1.10)
+				<br />
+				Font author: Bernd Montag
+				<br />
+				<br />
+				Icon: <a href="https://thenounproject.com/term/bullseye/78138/">Bullseye</a> (Creative Commons)
+				<br />
+				Icon designer: Pieter J. Smits				
+				</p>
+		<h1 id="download">Download</h1>
+			<p>Please download directly from the GitHub releases page: <a href="https://github.com">https://github.com</a></p>
+		<h1 id="install">Install</h1>
+			<p>Installation is quick and easy. Simply download the latest release and extract the contents into to a directory.</p>
+			<p>For the best experience, please run Certera manually, not as a service, for the first time to ensure there aren't any issues on your system. You can more easily 
+			see the console output when not running as a service. After Certera setup has completed successfully, it is recommended that Certera be configured to run as a service or daemon; this can ensure Certera is always running despite reboots.</p>
+			<h2 id="windows">Windows</h2>
+				<p>To install as a service, you can use SC, <a href="https://nssm.cc/usage">NSSM</a> or whatever method you prefer.</p>
+				<p>Be sure to open Services panel and view the created Certera service to ensure recovery options are to your liking.</p>
+<blockquote>
+<p>Configure Certera to run as a service using SC.</p>
+</blockquote>
+<pre>
+sc create Certera binPath=&quot;&lt;full_path_to_certera.exe&gt;&quot;
+</pre>
+<blockquote>
+<p>Configure Certera to run as a service using NSSM.</p>
+</blockquote>
+<pre>
+nssm install Certera &quot;&lt;full_path_to_certera.exe&gt;&quot;
+</pre>
+
+			<h2 id="linux">Linux</h2>
+				<p>There are various ways to do this, but using systemd can be used.</p>
+<blockquote>
+<p>Create the user that will run the certera application.</p>
+</blockquote>
+<pre>
+useradd -m certerauser -p choose-your-password!123
+</pre>				
+
+<blockquote>
+<p>Configure Certera to run as a daemon using systemd. (e.g. /etc/systemd/system/certera.service)</p>
+</blockquote>
+<pre>
+[Unit]
+Description=Certera
+
+[Service]
+ExecStart=/path/to/cetera/cetera
+WorkingDirectory=/path/to/cetera/
+User=certerauser
+Restart=on-failure
+SyslogIdentifier=certera
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+</pre>
+
+<blockquote>
+<p>Reload systemd and define the Certera service</p>
+</blockquote>
+<pre>
+systemctl daemon-reload
+systemctl enable certera.service
+</pre>
+
+<blockquote>
+<p>Start the Certera service</p>
+</blockquote>
+<pre>
+systemctl start certera.service
+systemctl status certera.service
+</pre>			
+			
+		<h1 id="setup">Setup</h1>
+			<p>After installation is complete. Execute the certera binary that runs the web application. Then, navigate to <a href="http://localhost">http://localhost</a>.
+			Setup will guide you through creating an administrator account, an ACME (Let's Encrypt) account, configure the server details and acquire 
+			your first certificate automatically. Certera will then restart where you can then login and get started issuing and tracking certificates.</p>
+			<h2 id="account">Account</h2>
+				<p>The first step is to create an account. For now, there isn't an option to create accounts for multiple users.</p>
+				<a href="images/setup-account.png"><img class="screenshot" src="images/setup-account.png" /></a>
+			<h2 id="acme-account">ACME Account</h2>
+				<p>Here you can configure your Let's Encrypt user account. If you have an existing key you'd like to use, you can upload that or create a new account.</p>
+				<a href="images/setup-le.png"><img class="screenshot" src="images/setup-le.png" /></a>
+			<h2 id="server">Server</h2>
+				<p>This is the site's host name that will be accessible via HTTPS later.</p>
+				<a href="images/setup-server.png"><img class="screenshot" src="images/setup-server.png" /></a>
+			<h2 id="certificate">Certificate</h2>
+				<p>At this point, installation is nearly complete. Certera will obtain and store a certificate to be used for the site. This typically takes less than 1 minute to complete.
+				After a certificate is successfully acquired, the site will restart automatically and you can login to begin issuing and tracking certificates.</p>
+				<a href="images/setup-certificate.png"><img class="screenshot" src="images/setup-certificate.png" /></a>
+				<br />
+				<p>Wait a moment for Certera to restart and the page will refresh automatically.</p>
+				<a href="images/setup-finished.png"><img class="screenshot" src="images/setup-finished.png" /></a>
+			<h2 id="configuration">Configuration</h2>
+				<p>There are more configuration options to configure that aren't available via the setup steps above. Be sure to open the config.json file to configure
+				the allowed remote IPs that are allowed to connect. Without configuring this, only the &quot;/.well-known/acme-challenge&quot; endpoint is accessible to the outside world.</p>
+				<h3>IP ACL</h3>
+					<p>The config.json file has a section where you can configure two sets of IPs to be allowed to access the Admin UI and the API. By default, only local connections and connections to the 
+					&quot;/.well-known/acme-challenge&quot; is allowed (because Let's Encrypt does not publish the IP addresses of their ACME servers).</p>
+<blockquote>
+<p>By default, no external connections are allowed to the Admin UI or the API. If you're setting this up on a VPS or cloud, you will need to change this to access your Certera instance in order to perform the setup steps.</p>
+</blockquote>
+<pre>
+"AllowedRemoteIPAddresses": 
+{
+    "AdminUI": "",
+    "API": ""
+}
+</pre>
+				<h3>SMTP</h3>
+					<p>Before you can receive notifications from your Certera Central Validation Server, you must configure your SMTP settings in the config.json file</p>
+					<blockquote>
+<p>No SMTP configuration exists by default. You must specify the SMTP configuration before you can receive notifications.</p>
+</blockquote>
+<pre>
+"SMTP": {
+    "Host": "",
+    "Port": 25,
+    "Username": "",
+    "Password": "",
+    "UseSSL": true,
+    "FromName": "MySite Certs",
+    "FromEmail": "noreply@mysite.com"
+}
+</pre>
+		<h1 id="admin-ui">Admin UI</h1>
+			<p>The Admin UI (or web UI) is where you can issue and track certificates, create ACME accounts, create and manage private keys and more.</p>
+			<h2 id="security">Security</h2>
+				<p>The Admin UI is protected using the email and password you used during setup. Certera creates an encrypted cookie that expires after 20 minutes of inactivity.
+				There is also an option to enable 2 factor authentication by clicking on your email at the top right of the Admin UI. Certera also uses CSRF protection on POST requests.
+				Certera does not reference external files of any kind (Javascript, css, images, fonts or otherwise). Certera also works with Javascript disabled.
+				</p>
+
+			<h2 id="tracking">Tracking Page</h2>
+				<p>The tracking page allows you to track various kinds of certificates. The easiest way is to simply specify the URLs directly via the tracking edit page.
+				Sometimes, you may have a certificate that is not accessible via a URL. Simply upload the public portion of the certificate for tracking via the tracking edit page.
+				Finally, the certificates that are managed and issued through Certera are automatically tracked.
+				</p>
+				<a href="images/tracking.png"><img class="screenshot" src="images/tracking.png" /></a>
+				<br />
+				<p>On the tracking edit page, you can define the sites whose certificates you wish to track. You may also upload the public certificates manually for tracking.</p>
+				<a href="images/tracking-edit.png"><img class="screenshot" src="images/tracking-edit.png" /></a>
+
+			<h2 id="acme-accounts">ACME Accounts Page</h2>
+				<p>Here you can manage the ACME accounts. One is automatically created during setup to obtain the Certera site certificate. You may want to create a staging Let's Encrypt account to issue staging certificates for testing purposes.</p>
+
+			<h2 id="keys">Keys Page</h2>
+				<p>Certera manages storing and associating keys with certificates and ACME accounts. You can create a new key to rotate a certificate's private key at your desired interval.</p>
+				<a href="images/keys.png"><img class="screenshot" src="images/keys.png" /></a>
+				
+			<h2 id="certificates">Certificates Page</h2>
+				<p>Here you can manage certificates issued by Let's Encrypt.  
+				You can view the history of the certificate issuance for a particular certificate by clicking on it.</p>
+				<a href="images/certificates.png"><img class="screenshot" src="images/certificates.png" /></a>
+				<br />
+				<p>When creating a certificate, you can specify extra Subject Alternative Name values, which key to use and Certificate Signing Request details. </p>
+				<a href="images/certificates-create.png"><img class="screenshot" src="images/certificates-create.png" /></a>
+				
+			<h2 id="notifications">Notifications Page</h2>
+				<p>Control what kinds of notifications you'd like to receive from Certera. You must have SMTP configured in order to receive notifications.</p>
+				<a href="images/notifications.png"><img class="screenshot" src="images/notifications.png" /></a>
+			<h2 id="settings">Settings Page</h2>
+				<p>You can rotate the API keys easily through the settings page.</p>
+		<h1 id="api">API</h1>
+			<h2 id="api-security">API Security</h2>
+				<p>API is secured using an API key specified via the &quot;apiKey&quot; header value obtained from the settings page.</p>			
+			<h2 id="certificates-api">Certificates API</h2>
+				<p>The certificate endpoint is the following: https://&lt;your_certera_site_hostname&gt;/api/certificate/&lt;certificate_name&gt;
+				</p>
+				<p>Here, you can obtain the certificate you've acquired from Let's Encrypt. You can choose to receive the certificate in PEM or PFX (base 64 encoded) format.
+				</p>
+				<pre>
+curl https://&lt;your_certera_site_hostname&gt;/api/certificate/&lt;certificate_name&gt; \
+  -H "apiKey:&lt;your_api_key&gt;"
+</pre>
+<blockquote>
+<p>There are some optional query string parameters you can specify, default values first:</p>
+</blockquote>
+<pre>
+staging=false|true
+format=pem|pfx
+pfxPassword=&lt;your_pfx_password&gt;
+</pre> 
+<blockquote>
+<p>You can pass extra parameters to the certificate endpoint like this:</p>
+</blockquote>
+<pre>
+curl https://&lt;your_certera_site_hostname&gt;/api/certificate/&lt;certificate_name&gt; \
+  -H "apiKey:&lt;your_api_key&gt;" \
+  -d "staging=true&amp;format=pfx&amp;pfxPassword=$3cr3t"
+</pre> 
+				
+			<h2 id="keys-api">Keys API</h2>
+				<p>The key endpoint is the following: https://&lt;your_certera_site_hostname&gt;/api/key/&lt;key_name&gt;</p>
+				<p>Here, you can obtain the private key used to generate the certificate. You can choose to receive the key in PEM or DER (base 64 encoded) format.</p>
+				<pre>
+curl https://&lt;your_certera_site_hostname&gt;/api/key/&lt;key_name&gt; \
+  -H "apiKey:&lt;your_api_key&gt;"
+</pre>
+<blockquote>
+<p>There is an optional query string parameter you can specify, default value first:</p>
+</blockquote>
+<pre>
+format=pem|der
+</pre> 
+<blockquote>
+<p>You can pass extra parameters to the key endpoint like this:</p>
+</blockquote>
+<pre>
+curl https://&lt;your_certera_site_hostname&gt;/api/key/&lt;key_name&gt; \
+  -H "apiKey:&lt;your_api_key&gt;" \
+  -d "format=der"
+</pre> 
+		<h1 id="integration">Integration</h1>
+			<h2 id="http-01">HTTP-01</h2>
+				<p>Because Certera currently only works with HTTP-01 ACME challenge type, you must redirect the &quot;/.well-known/acme-challenge&quot; request from your endpoints to
+				your Certera server. You may use various methods and it all depends on the web server technology you use.</p>
+				
+				<blockquote>
+				<p>IIS/ASPNET web.config:</p>
+				</blockquote>
+				<pre>				
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;configuration&gt;
+  &lt;system.webServer&gt;
+    &lt;rewrite&gt;
+      &lt;rules&gt;
+        &lt;rule name="Redirect ACME Challenge" stopProcessing="true"&gt;
+    	  &lt;match url="(.*)" /&gt;
+            &lt;conditions logicalGrouping="MatchAll" trackAllCaptures="false"&gt;
+              &lt;add input="{REQUEST_URI}" pattern="^\/\.well-known\/acme-challenge\/.*" /&gt;
+            &lt;/conditions&gt;
+            &lt;action type="Redirect" url="https://&lt;your_certera_site_hostname&gt;/{R:1}" 
+					redirectType="Temporary" /&gt;
+         &lt;/rule&gt;
+      &lt;/rules&gt;
+    &lt;/rewrite&gt;
+  &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+				</pre>
+				<blockquote>
+				<p>Apache .htaccess:</p>
+				</blockquote>
+				<pre>
+RedirectMatch 302 ^(?!/\.well-known/acme-challenge/).* https://&lt;your_certera_site_hostname&gt;/$1
+				</pre>
+				<blockquote>
+				<p>NGINX conf:</p>
+				</blockquote>
+				<pre>	
+location ^~ /.well-known/acme-challenge/ {
+  default_type "text/plain";				
+  rewrite /.well-known/acme-challenge/(.*) https://&lt;your_certera_site_hostname&gt;/.well-known/acme-challenge/$1 break;
+}
+				</pre>
+			<h2 id="api-clients">API Clients</h2>
+				<p>You can use anything that can make a request. The response isn't in JSON or XML, so simply write the response to a file. cURL, PowerShell, etc. all work great.
+			<h2 id="applying-certificates">Applying Certificates</h2>
+				<p>How you apply your certificate will vary depending on web server software and operating system. There are plenty of examples online of how to do this, but
+				we'll start collecting examples for the most common scenarios and put them in a repo and link them here.</p>
+		<h1 id="coming-soon">Coming Soon</h1>
+			<ul>
+				<li>DNS-01 challenge type - issue wildcard certificates, issue certificates without configuring redirects at each endpoint.</li>
+				<li>ACME API quota tracking - view how many calls to ACME endpoints are being made to ensure you're within the limits.</li>
+				<li>Users and roles - be able to control access to certain keys and certificates within your organization (i.e. separation of roles).</li>
+				<li>and much more!</li>
+			</ul>
+			<p>Be sure to submit feature requests via the GitHub page.</p>
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="text">notes</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
