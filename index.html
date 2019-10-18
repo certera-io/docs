@@ -359,12 +359,39 @@ nssm install Certera &quot;&lt;full_path_to_certera.exe&gt;&quot;
 </pre>
 
 			<h2 id="linux">Linux</h2>
-				<p>There are various ways to do this, but using systemd can be used.</p>
+				<p>First, run certera as the local user to make sure things start up correctly. You can configure to run as a service after.</p>
+				
+<blockquote>
+<p>First time running Certera as the local user.</p>
+</blockquote>				
+<pre>
+# Get the link to the latest version here: https://github.com/certera-io/certera/releases/latest
+wget https://github.com/certera-io/certera/releases/download/1.0.0-beta/certera-1.0.0-beta-linux-x64.zip
+
+sudo apt install unzip
+
+# unzip into the directory of your choosing, /opt or /usr/local or whatever your conventions are
+sudo unzip certera-1.0.0-beta-linux-x64.zip -d /opt/certera
+
+cd /opt/certera
+
+sudo chmod +x certera
+
+# if running as local user, must allow access to bind to port 80 and 443
+sudo apt-get install libcap2-bin
+sudo setcap 'cap_net_bind_service=+ep' /opt/certera/certera
+
+# run it the first time to see the logs more easily
+./certera
+</pre>		
+
+			<h2>Linux (service)</h2>
+		<p>There are various ways to do this, but using systemd can be used.</p>
 <blockquote>
 <p>Create the user that will run the certera application.</p>
 </blockquote>
 <pre>
-useradd -m certerauser -p choose-your-password!123
+sudo useradd -m certerauser -p choose-your-password!123
 </pre>				
 
 <blockquote>
@@ -375,8 +402,8 @@ useradd -m certerauser -p choose-your-password!123
 Description=Certera
 
 [Service]
-ExecStart=/path/to/cetera/cetera
-WorkingDirectory=/path/to/cetera/
+ExecStart=/opt/certera/certera
+WorkingDirectory=/opt/certera/
 User=certerauser
 Restart=on-failure
 SyslogIdentifier=certera
@@ -387,19 +414,31 @@ WantedBy=multi-user.target
 </pre>
 
 <blockquote>
+<p>Because you're running the service as a user, you must ensure you've given the process permission to bind to port 80/443.</p>
+</blockquote>
+
+<blockquote>
+<p>Grant access to the certerauser to certera directory</p>
+</blockquote>
+<pre>
+sudo chown -R certerauser /opt/certera
+</pre>
+
+
+<blockquote>
 <p>Reload systemd and define the Certera service</p>
 </blockquote>
 <pre>
-systemctl daemon-reload
-systemctl enable certera.service
+sudo systemctl daemon-reload
+sudo systemctl enable certera.service
 </pre>
 
 <blockquote>
 <p>Start the Certera service</p>
 </blockquote>
 <pre>
-systemctl start certera.service
-systemctl status certera.service
+sudo systemctl start certera.service
+sudo systemctl status certera.service
 </pre>			
 			
 		<h1 id="setup">Setup</h1>
