@@ -80,6 +80,14 @@
 			  </li>
 		    </ul>
           </li>
+		  <li>
+            <a href="#upgrade" class="toc-h1 toc-link" data-title="Upgrade">Upgrade</a>
+			<ul class="toc-list-h2">
+			  <li>
+				<a href="#u-linux" class="toc-h2 toc-link" data-title="Linux">Linux</a>
+			  </li>
+		    </ul>
+          </li>
           <li>
             <a href="#setup" class="toc-h1 toc-link" data-title="Setup">Setup</a>
 			<ul class="toc-list-h2">
@@ -445,6 +453,35 @@ sudo systemctl enable certera.service
 sudo systemctl start certera.service
 sudo systemctl status certera.service
 </pre>			
+
+
+<h1 id="upgrade">Upgrade</h1>
+			<p>Upgrading is a trivial process. Simply stop the service, copy over the bits and restart the service. Do not copy over files that contain user-specific changes, such as config.json and appsettings.json.</p>
+			<h2 id="u-linux">Linux</h2>
+				<p>First, run certera as the local user to make sure things start up correctly. You can configure to run as a service after.</p>
+				
+<blockquote>
+<p></p>
+</blockquote>				
+<pre>
+# Download and unzip
+wget https://github.com/certera-io/certera/releases/download/1.2.0/certera-1.2.0-linux-x64.zip
+unzip certera-1.2.0-linux-x64.zip -d certera-1.2.0
+
+cd certera-1.2.0/
+
+# Stop the current Certera service
+sudo systemctl stop certera.service
+
+# Don't copy appsettings.json or config.json as those may contain user modified values
+sudo cp -r certera version.txt web.config wwwroot /opt/certera
+
+# Allow port 80/443 binding
+sudo setcap 'cap_net_bind_service=+ep' /opt/certera/certera
+
+# Start the Certera service
+sudo systemctl start certera.service
+</pre>	
 			
 		<h1 id="setup">Setup</h1>
 			<p>After installation is complete. Execute the certera binary that runs the web application. Then, navigate to <a href="http://localhost">http://localhost</a>.
