@@ -169,7 +169,6 @@
       <div class="content">
         <h1 id="home">Certera Docs</h1>
 			<p>Welcome to the Certera docs! Scroll down to keep reading or use the menu on the left to select your topic.</p>
-			<p>Please note that Certera isn't production ready yet. This is beta software and Certera is not responsible for any problems you run into using this software.</p>
 		<h1 id="introduction">Introduction</h1>
 			<p>Certera is a <b>Central Validation Server</b> (CVS) for the ACME protocol (specifically for Let's Encrypt certificates). Certera is a
 			self-contained web application you host and operate yourself. With Certera, through Let's Encrypt APIs, you can issue free certificates for all of your needs.
@@ -379,12 +378,12 @@ nssm install Certera &quot;&lt;full_path_to_certera.exe&gt;&quot;
 </blockquote>				
 <pre>
 # Get the link to the latest version here: https://github.com/certera-io/certera/releases/latest
-wget https://github.com/certera-io/certera/releases/download/1.0.0-beta/certera-1.0.0-beta-linux-x64.zip
+wget https://github.com/certera-io/certera/releases/download/1.2.0/certera-1.2.0-linux-x64.zip
 
 sudo apt install unzip
 
 # unzip into the directory of your choosing, /opt or /usr/local or whatever your conventions are
-sudo unzip certera-1.0.0-beta-linux-x64.zip -d /opt/certera
+sudo unzip certera-1.2.0-linux-x64.zip -d /opt/certera
 
 cd /opt/certera
 
