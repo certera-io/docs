@@ -571,7 +571,8 @@ sudo systemctl start certera.service
 				<p>Control what kinds of notifications you'd like to receive from Certera. Certera can send notifications via Email or Slack. You must have SMTP configured in order to receive Email notifications.</p>
 				<a href="images/notifications.png"><img class="screenshot" src="images/notifications.png" /></a>
 			<h2 id="settings">Settings Page</h2>
-				<p>Shows basic SMTP setting information.</p>
+				<p>Here you can manage how many days before the certificate expires to perform renewal. Certera allows you to specify a script when performing certificate requests that use the DNS-01 Challenge type.</p>
+				<a href="images/certificates.png"><img class="screenshot" src="images/certificates.png" /></a>
 		<h1 id="api">API</h1>
 			<h2 id="api-security">API Security</h2>
 				<p>API is secured using an API key specified via the &quot;apiKey&quot; header value. Each certificate and key has 2 API keys that can be rotated as needed or desired.</p>
@@ -671,7 +672,6 @@ location ^~ /.well-known/acme-challenge/ {
 				we'll start collecting examples for the most common scenarios and put them in a repo and link them here.</p>
 		<h1 id="coming-soon">Coming Soon</h1>
 			<ul>
-				<li>DNS-01 challenge type - issue wildcard certificates, issue certificates without configuring redirects at each endpoint.</li>
 				<li>ACME API quota tracking - view how many calls to ACME endpoints are being made to ensure you're within the limits.</li>
 				<li>Users and roles - be able to control access to certain keys and certificates within your organization (i.e. separation of roles).</li>
 				<li>and much more!</li>
