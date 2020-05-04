@@ -580,6 +580,7 @@ sudo systemctl start certera.service
 				<p>The certificate endpoint is the following: https://&lt;your_certera_site_hostname&gt;/api/certificate/&lt;certificate_name&gt;
 				</p>
 				<p>Here, you can obtain the certificate you've acquired from Let's Encrypt. You can choose to receive the certificate in PEM or PFX (base 64 encoded) format.
+				Certificates returned by the API contain the entire certificate chain. If you wish to only retrieve the certificate without the chain, please use chain=false in the API call.
 				</p>
 				<pre>
 curl https://&lt;your_certera_site_hostname&gt;/api/certificate/&lt;certificate_name&gt; \
@@ -592,6 +593,7 @@ curl https://&lt;your_certera_site_hostname&gt;/api/certificate/&lt;certificate_
 staging=false|true
 format=pem|pfx
 pfxPassword=&lt;your_pfx_password&gt;
+chain=true|false
 </pre> 
 <blockquote>
 <p>You can pass extra parameters to the certificate endpoint like this:</p>
