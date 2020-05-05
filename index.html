@@ -601,7 +601,7 @@ chain=true|false
 <pre>
 curl https://&lt;your_certera_site_hostname&gt;/api/certificate/&lt;certificate_name&gt; \
   -H "apiKey:&lt;your_api_key&gt;" \
-  -d "staging=true&amp;format=pfx&amp;pfxPassword=$3cr3t"
+  -d "staging=true&amp;format=pfx&amp;pfxPassword=$3cr3t" -G
 </pre> 
 				
 			<h2 id="keys-api">Keys API</h2>
@@ -623,7 +623,7 @@ format=pem|der
 <pre>
 curl https://&lt;your_certera_site_hostname&gt;/api/key/&lt;key_name&gt; \
   -H "apiKey:&lt;your_api_key&gt;" \
-  -d "format=der"
+  -d "format=der" -G
 </pre> 
 		<h1 id="integration">Integration</h1>
 			<h2 id="http-01">HTTP-01</h2>
