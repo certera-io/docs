@@ -189,10 +189,14 @@
 			<p>Certera does exactly that and more. Here's a list of some of the current features:</p>
 			<ul>
 				<li>Track, analyze and receive notifications for certificate expirations, changes or issuance failures.</li>
-				<li>Separates certificate issuance and the application of the certificates. In other words, Certera gives you greater flexibility by helping acquire the certificates in one step and more easily facilitating how and when the certificates are applied, or used, as another step.</li>
-				<li>Manage certificate keys. Certera can help create and store keys durably. This gives you the flexibility of managing the lifecycle of the keys used by your certificates.</li>
+				<li>Separates certificate issuance and the application of the certificates. In other words, Certera gives you greater flexibility by acquiring the certificate in one step allowing you to choose when and how that certificate is applied.</li>
+				<li>Flexibility in using HTTP-01 or DNS-01 validation.</li>
+				<li>Create, store and manage certificates and keys from a single place.</li>
+				<li>Manage key rotations. This gives you the flexibility of managing the lifecycle of the keys used by your certificates. You choose when to rotate your private keys (which is helpful for managing certificate pinning).</li>
 				<li>Works great for more complex scenarios (for a server farm or machines behind a load balancer). Because issuing certificates and applying them are clearly separate steps, and certificates are centralized in Certera, you can easily apply certificates onto a wide variety of interesting web server scenarios.</li>
+				<li>Issue certificates for other systems, such as FTP or email servers.</li>
 				<li>Helps manage rate limits by acquiring the certificate once and allowing you to work out how to best apply that certificate.</li>
+				<li>Much more to come...</li>
 			</ul>		
 			
 			<h1 id="license">License</h1>
@@ -684,8 +688,10 @@ location ^~ /.well-known/acme-challenge/ {
 				we'll start collecting examples for the most common scenarios and put them in a repo and link them here.</p>
 		<h1 id="coming-soon">Coming Soon</h1>
 			<ul>
+				<li>Automate rotating short-lived certificates that are exchanged with 3rd parties (when they're used for SAML SSO or client authentication).</li>
 				<li>ACME API quota tracking - view how many calls to ACME endpoints are being made to ensure you're within the limits.</li>
 				<li>Users and roles - be able to control access to certain keys and certificates within your organization (i.e. separation of roles).</li>
+				<li>Storing certificates and keys in an HSM.</li>
 				<li>and much more!</li>
 			</ul>
 			<p>Be sure to submit feature requests via the GitHub page.</p>
