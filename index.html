@@ -155,6 +155,9 @@
 				<a href="#http-01" class="toc-h2 toc-link" data-title="HTTP-01">HTTP-01</a>
 			  </li>
 			  <li>
+				<a href="#dns-01" class="toc-h2 toc-link" data-title="DNS-01">DNS-01</a>
+			  </li>
+			  <li>
 				<a href="#api-clients" class="toc-h2 toc-link" data-title="API Clients">API Clients</a>
 			  </li>
 			  <li>
@@ -628,9 +631,9 @@ curl https://&lt;your_certera_site_hostname&gt;/api/key/&lt;key_name&gt; \
   -G
 </pre> 
 		<h1 id="integration">Integration</h1>
+			<p>You may choose either HTTP-01 or DNS-01 validation method to validate ownership of the domain for which you're attempting to obtain the certificate. For more information, please refer to the following documentation: <a href="https://letsencrypt.org/docs/challenge-types/">https://letsencrypt.org/docs/challenge-types/</a></p>
 			<h2 id="http-01">HTTP-01</h2>
-				<p>Because Certera currently only works with HTTP-01 ACME challenge type, you must redirect the &quot;/.well-known/acme-challenge&quot; request from your endpoints to
-				your Certera server. You may use various methods and it all depends on the web server technology you use.</p>
+				<p>HTTP-01 validation means that when you request a certificate, the ACME server will attempt to verify a challenge via the &quot;/.well-known/acme-challenge&quot; endpoint. You must redirect this endpoint from your site to your Certera instance. For example, if you host your Certera instance on cert.mysite.com and you wish to obtain a certificate for ftp.mysite.com, you would setup an HTTP redirect on ftp.mysite.com so that when requests made to &quot;http://ftp.mysite.com/.well-known/acme-challenge&quot;, they would be redirected to &quot;http://cert.mysite.com/.well-known/acme-challenge&quot;. You may use various methods as it depends on the web server technology you use.</p>
 				
 				<blockquote>
 				<p>IIS/ASPNET web.config:</p>
@@ -669,8 +672,13 @@ location ^~ /.well-known/acme-challenge/ {
   rewrite /.well-known/acme-challenge/(.*) https://&lt;your_certera_site_hostname&gt;/.well-known/acme-challenge/$1 break;
 }
 				</pre>
+			<h2 id="dns-01">DNS-01</h2>
+				<p>DNS-01 validation means that ACME will validate ownership of the domain by ensuring the challenge exists in a particular DNS record for a domain you're attempting to obtain a certificate for. For example, if you wish to obtain a certificate for ftp.mysite.com, the token that ACME will check for must exist as a TXT record with the following name: _acme-challenge.ftp.mysite.com</p>
+				<p>
+				To configure DNS-01 validation, please refer to the <a href="#settings">settings</a> page.
+				</p>
 			<h2 id="api-clients">API Clients</h2>
-				<p>You can use anything that can make a request. The response isn't in JSON or XML, so simply write the response to a file. cURL, PowerShell, etc. all work great.
+				<p>When attempting to retrieve a certificate or key stored within your Certera instance, you can use anything that can make an HTTP request. The response isn't in JSON or XML, so simply write the response to a file. cURL, PowerShell, etc. all work great. You simply make an API call to the <a href="#certificates-api">certificate</a> or <a href="#keys-api">key</a> endpoint and write the result to a file.
 			<h2 id="applying-certificates">Applying Certificates</h2>
 				<p>How you apply your certificate will vary depending on web server software and operating system. There are plenty of examples online of how to do this, but
 				we'll start collecting examples for the most common scenarios and put them in a repo and link them here.</p>
